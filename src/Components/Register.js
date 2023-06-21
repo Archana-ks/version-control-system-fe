@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useFormik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
-import { REACT_APP_BASE_URL } from "../App";
+import { REACT_APP_BASE_URL}  from "../App";
 
 const Register = () => {
   const navigate = useNavigate();
