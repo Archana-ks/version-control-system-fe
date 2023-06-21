@@ -5,7 +5,7 @@ import Register from "./Components/Register";
 import ForgotPassword from "./Components/ForgotPassword";
 import ResetPassword from "./Components/ResetPassword";
 import useFindUser from "./Hooks/useFindUser";
-// import AuthContext from "./Context/AuthContext";
+import AuthContext from "./Context/AuthContext";
 import PrivateRoutes from "./Components/PrivateRoutes";
 import ViewRepo from "./Components/ViewRepo";
 import EditRepo from "./Components/EditRepo";
@@ -19,7 +19,7 @@ function App() {
   const [user, setUser, loading] = useFindUser();
 
   return (
-    // <AuthContext.Provider value={{ user, setUser, loading }}>
+    <AuthContext.Provider value={{ user, setUser, loading }}>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -35,7 +35,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
-    // </AuthContext.Provider>
+    </AuthContext.Provider>
   );
 }
 

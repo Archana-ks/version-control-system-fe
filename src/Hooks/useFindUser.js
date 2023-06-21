@@ -7,22 +7,22 @@ const useFindUser = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // const getUser = async () => {
-  //   try {
-  //     const response = await axios.get(`${REACT_APP_BASE_URL}/user`, { withCredentials: true });
-  //     if (response.data.success) {
-  //       setUser(response.data.user);
-  //       setLoading(false);
-  //     }
-  //   } catch (error) {
-  //     console.log("Error: ", error);
-  //     setLoading(false);
-  //   }
-  // };
+  const getUser = async () => {
+    try {
+      const response = await axios.get(`${REACT_APP_BASE_URL}/user`, { withCredentials: true });
+      if (response.data.success) {
+        setUser(response.data.user);
+        setLoading(false);
+      }
+    } catch (error) {
+      console.log("Error: ", error);
+      setLoading(false);
+    }
+  };
 
-  // useEffect(() => {
-  //   getUser();
-  // }, []);
+  useEffect(() => {
+    getUser();
+  }, []);
 
   return [user, setUser, loading];
 };
